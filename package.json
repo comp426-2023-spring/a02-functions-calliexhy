@@ -3,7 +3,7 @@
   "galosh.js": "./cli.js"
 },
   "name": "a02-functions-calliexhy",
-  "version": "GPL-3.0-or-later ",
+  "version": "1.0.0 ",
   "description": "This assignment will help you learn to create an installable Node.js command line utility.",
   "main": "index.js",
   "scripts": {
