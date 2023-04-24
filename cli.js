@@ -33,6 +33,10 @@ if (args.e) {
 
 let timezone = moment.tz.guess();
 
+if(args.t) {
+  timezone = args["t"];    
+}
+
 let data = await response.json();
 if (args.j) {
     console.log(data);
@@ -44,6 +48,10 @@ let days = args.d
 let precipitation_hours_data = data.daily.precipitation_hours;
 
 
+let request_url = "https://api.open-meteo.com/v1/forecast?latitude=" + latitude + "&longitude=" + longitude + "&daily=precipitation_hours&current_weather=true&timezone=" + timezone;
+let response = await fetch(request_url);
+
+
 if (days == 0) {
   console.log("today.")
 } else if (days > 1) {
@@ -51,9 +59,6 @@ if (days == 0) {
 } else {
   console.log("tomorrow.")
 }
-
-let request_url = "https://api.open-meteo.com/v1/forecast?latitude=" + latitude + "&longitude=" + longitude + "&daily=precipitation_hours&current_weather=true&timezone=" + timezone;
-let response = await fetch(request_url);
 
 
 if (!days) {
