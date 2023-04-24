@@ -26,6 +26,7 @@
     "bin": {
     "galosh.js": "./cli.js"
   }
+
 }
   
 
