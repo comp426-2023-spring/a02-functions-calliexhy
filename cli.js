@@ -61,6 +61,13 @@ if (args.j) {
 let days = args.d 
 
 
+if (data.daily.precipitation_hours[days] > 0) {
+  console.log("You won't need your galoshes " );
+} else {
+  console.log("You will probably need your galoshes ");
+}
+
+
 if (days == 0) {
   console.log("today.")
 } else if (days > 1) {
@@ -69,10 +76,4 @@ if (days == 0) {
   console.log("tomorrow.")
 }
 
-
-if (data.daily.precipitation_hours[days] > 0) {
-  console.log("You won't need your galoshes " + day);
-} else {
-  console.log("You will probably need your galoshes " + day);
-}
 
