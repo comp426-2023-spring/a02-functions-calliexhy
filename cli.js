@@ -41,6 +41,9 @@ if (args.j) {
 
 let days = args.d 
 
+let precipitation_hours_data = data.daily.precipitation_hours;
+
+
 if (days == 0) {
   console.log("today.")
 } else if (days > 1) {
