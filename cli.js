@@ -38,19 +38,18 @@ if(args.t) {
 }
 
 let data = await response.json();
-if (args.j) {
-    console.log(data);
-    process.exit(0);
-}
+
 
 let days = args.d 
-
-let precipitation_hours_data = data.daily.precipitation_hours;
 
 
 let request_url = "https://api.open-meteo.com/v1/forecast?latitude=" + latitude + "&longitude=" + longitude + "&daily=precipitation_hours&current_weather=true&timezone=" + timezone;
 let response = await fetch(request_url);
 
+if (args.j) {
+  console.log(data);
+  process.exit(0);
+}
 
 if (days == 0) {
   console.log("today.")
@@ -58,17 +57,4 @@ if (days == 0) {
   console.log("in " + days + " days.")
 } else {
   console.log("tomorrow.")
-}
-
-
-if (!days) {
-  if (precipitation_hours_data[1] > 0) {
-      console.log('You might need your galoshes ' + day_str);
-  } else {
-      console.log('You will not need your galoshes ' + day_str);
-  }
-} else if (precipitation_hours_data[days] > 0) {
-  console.log('You might need your galoshes ' + day_str);
-} else {
-  console.log('You will not need your galoshes ' + day_str);
 }
