@@ -11,6 +11,20 @@ if(argv.h) {
     process.exit(0);
 }
 
+let timezone = moment.tz.guess();
+
+if(args.t) {
+  timezone = args["t"];    
+}
+
+let day
+if (args.d == 0 || args.d) {
+	day = args.d; 
+} else {
+	day = 1; 
+} 
+
+
 let latitude, longitude
 
 if (args.n) {
@@ -31,11 +45,6 @@ if (args.e) {
     process.exit(0);
 }
 
-let timezone = moment.tz.guess();
-
-if(args.t) {
-  timezone = args["t"];    
-}
 
 
 let days = args.d 
