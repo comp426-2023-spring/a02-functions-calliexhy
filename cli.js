@@ -37,8 +37,6 @@ if(args.t) {
   timezone = args["t"];    
 }
 
-let data = await response.json();
-
 
 let days = args.d 
 
@@ -47,7 +45,7 @@ let request_url = "https://api.open-meteo.com/v1/forecast?latitude=" + latitude 
 let response = await fetch(request_url);
 
 if (args.j) {
-  console.log(data);
+  console.log(response);
   process.exit(0);
 }
 
